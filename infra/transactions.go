@@ -1,8 +1,7 @@
 package infra
 
 import (
-	"pco/app"
-	. "pco/domain"
+	"payment/app"
 )
 
 type transactions struct{ Events }

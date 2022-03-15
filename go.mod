@@ -1,4 +1,4 @@
-module pco
+module payment
 
 go 1.17
 

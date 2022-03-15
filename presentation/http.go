@@ -6,9 +6,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"pco/app"
-	model2 "pco/domain"
-	"pco/infra"
+	"payment/app"
+	model2 "payment/domain"
+	"payment/infra"
 )
 
 type HTTP struct {

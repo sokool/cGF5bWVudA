@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"pco/app"
-	"pco/domain"
-	"pco/infra"
-	"pco/presentation"
+	"payment/app"
+	"payment/domain"
+	"payment/infra"
+	"payment/presentation"
 )
 
 type Service struct {

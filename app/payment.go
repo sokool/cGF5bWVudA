@@ -1,9 +1,5 @@
 package app
 
-import (
-	. "pco/domain"
-)
-
 // Payment is a part of application layer.
 //
 // Has no business logic.
