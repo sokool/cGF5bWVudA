@@ -7,7 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"payment/app"
-	domain "payment/domain"
+	"payment/domain"
 	"payment/infra"
 )
 
