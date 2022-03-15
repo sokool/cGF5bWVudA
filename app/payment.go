@@ -1,5 +1,7 @@
 package app
 
+import . "payment/domain"
+
 // Payment is a part of application layer.
 //
 // Has no business logic.
