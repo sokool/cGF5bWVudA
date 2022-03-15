@@ -7,7 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"payment/app"
-	model2 "payment/domain"
+	domain "payment/domain"
 	"payment/infra"
 )
 
@@ -48,7 +48,7 @@ func (h *HTTP) Void(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *HTTP) Capture(w http.ResponseWriter, r *http.Request) {
-	var req model2.Money
+	var req domain.Money
 	if err := h.decode(r, &req); err != nil {
 		h.failed(r, w, err)
 		return
@@ -65,7 +65,7 @@ func (h *HTTP) Capture(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *HTTP) Refund(w http.ResponseWriter, r *http.Request) {
-	var req model2.Money
+	var req domain.Money
 	if err := h.decode(r, &req); err != nil {
 		h.failed(r, w, err)
 		return
@@ -85,8 +85,8 @@ func (h *HTTP) payment(r *http.Request) *app.Payment {
 	return h.payments.Read(h.id(r), newMerchant(r))
 }
 
-func (h *HTTP) id(r *http.Request) model2.ID {
-	return model2.NewID(mux.Vars(r)["id"])
+func (h *HTTP) id(r *http.Request) domain.ID {
+	return domain.NewID(mux.Vars(r)["id"])
 }
 
 func (h *HTTP) decode(r *http.Request, d document) error {
@@ -108,13 +108,13 @@ func (h *HTTP) failed(r *http.Request, w http.ResponseWriter, err error) {
 }
 
 type request struct {
-	CreditCard model2.CreditCard
-	Money      model2.Money
+	CreditCard domain.CreditCard
+	Money      domain.Money
 }
 
 type response struct {
-	ID        model2.ID
-	Available model2.Money
+	ID        domain.ID
+	Available domain.Money
 }
 
 type document = interface{}
